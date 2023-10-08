@@ -1,0 +1,35 @@
+{
+  "name": "ed-collab",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.6",
+    "axios": "^1.5.1",
+    "jsonwebtoken": "^9.0.2",
+    "lottie-react": "^2.4.0",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.5.3",
+    "next": "13.5.4",
+    "next-auth": "^4.23.2",
+    "react": "^18",
+    "react-countup": "^6.4.2",
+    "react-dom": "^18",
+    "react-hook-form": "^7.47.0",
+    "react-icons": "^4.11.0",
+    "react-redux": "^8.1.3",
+    "rippleui": "^1.12.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.4",
+    "postcss": "^8",
+    "tailwindcss": "^3"
+  }
+}
