@@ -1,25 +1,28 @@
-'use client'
-import { closeLoginModal,  openSignupModal } from '@/Redux/modalFeatures/modalSlice';
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+"use client";
+import { closeLoginModal, closeSignupModal, openLoginModal } from "@/Redux/modalFeatures/modalSlice";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaKey, FaMailBulk,FaUser,FaCamera } from "react-icons/fa";
-import Lottie from "lottie-react"
+import Lottie from "lottie-react";
+import { useDispatch, useSelector } from "react-redux";
 import login from "../../../Animation/login-lottie.json";
 
-const LoginModal = () => {
+const SignupModal = () => {
     const [load, setLoad] = useState(false)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const dispatch = useDispatch();
-  const isModalOpen = useSelector((state) => state.modals.isLoginModalOpen);
-    console.log(isModalOpen, 'open the value from login modal');
+  const isModalOpen = useSelector((state) => state.modals.isSignupModalOpen);
+    console.log(isModalOpen, 'open the value from signup modal');
   const handleCloseModal = () => {
     dispatch(closeLoginModal());
   };
-  const handleSignupModal = ()=>{
-    dispatch(openSignupModal())
-    dispatch(closeLoginModal())
-  }
+
+  const handleLoginModal = () => {
+    console.log("click");
+    dispatch(openLoginModal());
+    dispatch(closeSignupModal());
+  };
+
     const createUserHandle = async (data) => {
       console.log(data)
 
@@ -65,7 +68,7 @@ const LoginModal = () => {
                   <div className="w-full max-w-xl xl:px-8 lg:w-5/12">
                   <div className="bg-[#0083db] rounded shadow-2xl p-7 sm:p-10 ">
                     <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl text-white">
-                      Login
+                      Register
                     </h3>
                     <form onSubmit={handleSubmit(createUserHandle)}>
                       <div className="mb-1 sm:mb-2">
@@ -124,7 +127,7 @@ const LoginModal = () => {
                           className="inline-flex items-center justify-center w-full py-3 px-6 font-medium hover:bg-gray-700 tracking-wide text-white transition duration-200 rounded-full shadow-md outline-none bg-black"
                         >
                           {
-                            load ? <span className='border-2 border-dashed border-white animate-spin w-7 h-7 rounded-full'></span> : 'Login'
+                            load ? <span className='border-2 border-dashed border-white animate-spin w-7 h-7 rounded-full'></span> : ' Register'
                           }
                         </button>
                       </div>
@@ -132,7 +135,7 @@ const LoginModal = () => {
                     <div>
                       {/* <SocialLogin callbackUrl={callbackUrl}></SocialLogin> */}
                       <p className="text-xs text-gray-600 sm:text-sm mt-5">
-                      Create an account? <span onClick={handleSignupModal} className='font-semibold cursor-pointer'> Create one</span>
+                        Already have an account ? <span  className='font-semibold cursor-pointer' onClick={handleLoginModal}> Login</span>
                       </p>
                     </div>
                   </div>
@@ -144,7 +147,7 @@ const LoginModal = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default LoginModal
+export default SignupModal;

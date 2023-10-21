@@ -1,5 +1,5 @@
 "use client";
-import { openModal } from "@/Redux/modalFeatures/modalSlice";
+import { openLoginModal } from "@/Redux/modalFeatures/modalSlice";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -9,7 +9,7 @@ const SidebarMenu = () => {
   const [show, setShow] = useState(false);
   const handleLoginModal = () => {
     console.log("click");
-    dispatch(openModal());
+    dispatch(openLoginModal());
   };
   // console.log(isModalOpen)
 
