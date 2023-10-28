@@ -3,8 +3,8 @@ import React from 'react'
 const ContentBanner = () => {
   return (
     <div className="space-y-3">
-    <div className="top-10">
-        <h1 className="text-4xl md:text-6xl font-semibold">
+    <div className="">
+        <h1 className="text-4xl md:text-5xl font-semibold">
             Where Teaching <br /> and Learning
             <div className="text-[#0083db]"> Unite for Growth</div>
         </h1>

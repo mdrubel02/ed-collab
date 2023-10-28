@@ -41,9 +41,9 @@ const LoginModal = () => {
             >
               <div className="flex items-center justify-between p-5 border-b border-solid border-slate-400 rounded-t bg-white px-4 py-3">
                 <h3 className="text-3xl font-semibold">Modal Title</h3>
-                <button className="p-1 ml-auto bg-transparent border-0 text-cyan-500 opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none">
+                <button className="p-1 ml-auto  border-0 text-cyan-500 float-right text-3xl leading-none font-semibold outline-none focus:outline-none">
                   <span
-                    className="bg-transparent text-cyan-500 opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+                    className=" text-cyan-500  h-6 w-6 text-2xl block outline-none focus:outline-none"
                     onClick={handleCloseModal}
                   >
                     ×
